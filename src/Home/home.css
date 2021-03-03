@@ -1,0 +1,40 @@
+html {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.container {
+  max-width: 960px;
+}
+
+.pricing-header {
+  max-width: 700px;
+}
+
+.card-deck .card {
+  min-width: 220px;
+}
+
+#root .content.container { 
+  padding-top: 80px; 
+  max-height: 100vh;
+}
+
+@media screen and (max-width: 767px) {
+  #root .content.container { 
+    /* Adjusting for 2 menu buttons on sm. It might be wise to move to a dropdown menu on sm. */
+    padding-top: 120px; 
+  }
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }

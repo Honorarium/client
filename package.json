@@ -1,0 +1,120 @@
+{
+  "name": "honorarium-client",
+  "description": "Honorarium Desktop Client",
+  "homepage": "./",
+  "main": "./public/electron.js",
+  "author": "Honorarium",
+  "license": "GPL",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Honorarium/client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Honorarium/client/issues"
+  },
+  "keywords": [
+    "multisig",
+    "payments",
+    "monero",
+    "escrow"
+  ],
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.3",
+    "@testing-library/user-event": "^12.6.0",
+    "async-mutex": "^0.2.6",
+    "axios": "^0.21.1",
+    "bootbox": "^5.5.2",
+    "child_process": "^1.0.2",
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "create-react-app": "^4.0.2",
+    "digest-fetch": "^1.1.5",
+    "electron-is-dev": "^1.2.0",
+    "electron-log": "^4.3.1",
+    "electron-proxy-agent": "^1.2.0",
+    "electron-store": "^6.0.1",
+    "is-electron": "^2.2.0",
+    "monero-javascript": "^0.4.6",
+    "node-fetch": "^2.6.1",
+    "react": "^17.0.1",
+    "react-confirm-alert": "^2.7.0",
+    "react-dom": "^17.0.1",
+    "react-jsonrpc-client": "^1.0.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-simple-pull-to-refresh": "^1.2.1",
+    "socks-proxy-agent": "^5.0.0",
+    "tor-axios": "^1.0.9",
+    "tor-request": "^3.1.0",
+    "update-electron-app": "^2.0.1",
+    "wait-on": "^5.2.1",
+    "web-vitals": "^1.1.0"
+  },
+  "devDependencies": {
+    "electron": "^11.2.3",
+    "electron-builder": "^22.9.1"
+  },
+  "scripts": {
+    "dev": "BROWSER='none' concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "ebuild": "npm run build && node_modules/.bin/build",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "electron-pack": "electron-builder -c.extraMetadata.main=build/electron.js -mlw --publish=never",
+    "preelectron-pack": "yarn build",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "appId": "honorarium.github.io",
+    "productName": "Honorarium Client",
+    "copyright": "GPL",
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "assets/icon.ico"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon512.png",
+      "category": "Utility"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "extraResources": ["./public/**"],
+    "afterPack": "./hook.js",
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

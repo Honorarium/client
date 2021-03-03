@@ -1,0 +1,45 @@
+name: Build/release
+
+on: [push]
+
+jobs:
+    release:
+        runs-on: macos-latest
+
+        steps:
+
+        - name: Checkout git repository
+          uses: actions/checkout@v1
+
+        - name: Install NodeJS, NPM and Yarn
+          uses: actions/setup-node@v1
+          with:
+            node-version: 12
+
+        - uses: c-hive/gha-yarn-cache@v1
+
+        - name: Install dependencies
+          run: yarn install
+
+        - name: Build Electron app
+          run: yarn electron-pack
+
+        - name: Create Release
+          uses: "marvinpinto/action-automatic-releases@latest"
+          with:
+            repo_token: ${{ secrets.GITHUB_TOKEN }}
+            automatic_release_tag: "latest"
+            prerelease: true
+            title: "Development Build"
+            files: |
+              dist/*.exe
+              dist/*.dmg
+              dist/*.AppImage
+
+#        - name: Run Electronegativity checks
+#          uses: doyensec/electronegativity-action@v1.1
+
+#        - name: Upload checks results
+#          uses: github/codeql-action/upload-sarif@v1
+#          with:
+#            sarif_file: ../test-results
