@@ -54,7 +54,7 @@ export default class Api {
         const data = {
             "grant_type": "password",
             "client_id": "2",
-            "client_secret": "k2qG54XQ75mXWp5g3KygZrwUBE90WQ4qZyHJC6jV",
+            "client_secret": "EQgAHEuRqNrCCwfzXkJVPSwzWd01tRriGidAawTH",
             "username": username,
             "password": password,
             "scope": "*",
