@@ -9,16 +9,8 @@
 </p>
 
 <p align="center">
-<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/Honorarium/client/main">
-<img alt="GitHub branch checks state" src="https://img.shields.io/github/checks-status/Honorarium/client/master">
-<img alt="GitHub" src="https://img.shields.io/github/license/Honorarium/client">
-<img alt="Requires.io" src="https://img.shields.io/requires/github/Honorarium/client">
 <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Honorarium/client">
 <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/Honorarium/client">
-<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/downloads/Honorarium/client/latest/total">
-<img alt="GitHub repo file count (file extension)" src="https://img.shields.io/github/directory-file-count/Honorarium/client/dist?extension=exe&label=win%20builds">
-<img alt="GitHub repo file count (file extension)" src="https://img.shields.io/github/directory-file-count/Honorarium/client/dist?extension=app&label=mac%20builds">
-<img alt="GitHub repo file count (file extension)" src="https://img.shields.io/github/directory-file-count/Honorarium/client/dist?extension=AppImage&label=linux%20builds">
 <img alt="GitHub contributors" src="https://img.shields.io/github/contributors-anon/Honorarium/client">
 </p>
 
@@ -49,7 +41,7 @@
 
 ### Download and run
 
-You can [download](https://github.com/amitmerchant1990/electron-markdownify/releases/tag/v1.2.0) the latest installable version of this app for Windows, macOS and Linux.
+You can [download](https://github.com/Honorarium/client/releases) the latest installable version of this app for Windows, macOS and Linux.
 
 ### Build it yourself
 
